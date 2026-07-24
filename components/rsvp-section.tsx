@@ -7,7 +7,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Check, Heart, Loader2, Send } from 'lucide-react';
 import { useLanguage } from '@/lib/language';
-import { supabase } from '@/lib/supabase-client';
 import { GoldDivider, FloralCorner, PetalDecor } from './decorative';
 
 const schema = z.object({
@@ -40,20 +39,33 @@ export default function RsvpSection() {
     setSubmitting(true);
     setError(false);
     try {
-      const { error: dbError } = await supabase.from('rsvp').insert({
-        name: data.name,
-        phone: data.phone,
-        guests: data.guests,
-        attending: data.attending,
-        message: data.message || null,
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE',
+          subject: `New RSVP from ${data.name}`,
+          Name: data.name,
+          Phone: data.phone,
+          Guests: data.guests,
+          Attending: data.attending === 'yes' ? 'Yes, with pleasure' : 'Sadly, cannot',
+          Message: data.message || 'No message provided',
+        }),
       });
 
-      if (dbError) throw dbError;
+      const result = await response.json();
+      if (!result.success) {
+        throw new Error(result.message || 'Failed to submit RSVP');
+      }
 
       setSuccess(true);
       reset();
       setTimeout(() => setSuccess(false), 6000);
-    } catch {
+    } catch (err) {
+      console.error('RSVP Submission Error:', err);
       setError(true);
     } finally {
       setSubmitting(false);
