@@ -77,15 +77,7 @@ export default function VenueSection() {
                 <Navigation className="w-4 h-4" />
                 {t('venue_navigate')}
               </a>
-              <a
-                href={MAPS_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-body tracking-wide border border-gold/30 text-royal hover:bg-gold/10 transition-all duration-300"
-              >
-                <MapPin className="w-4 h-4" />
-                {t('venue_open_maps')}
-              </a>
+
             </div>
           </div>
 
