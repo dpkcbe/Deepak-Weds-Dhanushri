@@ -4,6 +4,8 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: { unoptimized: true },
+  output: 'export',
+  basePath: '/Deepak-Weds-Dhanushri',
 };
 
 module.exports = nextConfig;
