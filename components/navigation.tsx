@@ -15,7 +15,7 @@ const sections = [
 ];
 
 export default function Navigation() {
-  const { t } = useLanguage();
+  const { t, lang, toggleLang } = useLanguage();
   const [visible, setVisible] = useState(true);
   const [activeSection, setActiveSection] = useState('hero');
   const [scrolled, setScrolled] = useState(false);
@@ -114,7 +114,15 @@ export default function Navigation() {
                   D &amp; D
                 </button>
 
-
+                {/* Language toggle */}
+                <button
+                  onClick={toggleLang}
+                  className="ml-1 px-3 py-1.5 text-xs font-body tracking-wide rounded-full border border-gold/30 text-royal hover:bg-gold/10 transition-all duration-300 flex items-center gap-1"
+                >
+                  <span className={lang === 'en' ? 'font-semibold' : 'opacity-50'}>EN</span>
+                  <span className="text-gold/40">|</span>
+                  <span className={lang === 'ta' ? 'font-semibold' : 'opacity-50'}>த</span>
+                </button>
               </div>
             </motion.nav>
           )}

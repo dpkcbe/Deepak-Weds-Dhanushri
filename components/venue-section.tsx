@@ -98,7 +98,26 @@ export default function VenueSection() {
               referrerPolicy="no-referrer-when-downgrade"
               style={{ filter: 'grayscale(0.2) sepia(0.1) contrast(1.05)' }}
             />
-
+            {/* Animated location pin overlay */}
+            <motion.div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <div className="relative">
+                <div
+                  className="absolute -inset-4 rounded-full"
+                  style={{
+                    background: 'radial-gradient(circle, rgba(212,175,55,0.3), transparent)',
+                    animation: 'glow-pulse 2s infinite',
+                  }}
+                />
+                <MapPin
+                  className="w-10 h-10 text-gold-deep relative"
+                  fill="rgba(212,175,55,0.3)"
+                />
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

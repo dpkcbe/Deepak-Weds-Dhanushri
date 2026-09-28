@@ -12,6 +12,7 @@ import ReceptionSection from '@/components/reception-section';
 import VenueSection from '@/components/venue-section';
 import RsvpSection from '@/components/rsvp-section';
 import Footer from '@/components/footer';
+import MusicToggle from '@/components/music-toggle';
 
 function WeddingContent() {
   const [opened, setOpened] = useState(false);
@@ -46,6 +47,7 @@ function WeddingContent() {
             <RsvpSection />
           </main>
           <Footer />
+          <MusicToggle />
         </>
       )}
     </>
