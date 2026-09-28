@@ -22,13 +22,13 @@ export default function CoupleSection() {
       <PetalDecor className="absolute top-20 left-10 w-16 h-16 text-royal/20 animate-float-soft" />
       <PetalDecor className="absolute bottom-20 right-10 w-20 h-20 text-gold/20 animate-float-soft" />
 
-      <div className="relative z-10 max-w-5xl w-full px-6">
+      <div className="relative z-10 max-w-4xl w-full px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="text-center mb-16"
+          className="mb-12"
         >
           <p className="font-body text-xs sm:text-sm tracking-[0.4em] uppercase text-gold-deep mb-4">
             {t('couple_title')}
@@ -38,126 +38,82 @@ export default function CoupleSection() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-          {/* Groom */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="flex flex-col items-center text-center group"
+        {/* Single Couple Photo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="relative max-w-lg mx-auto mb-12 group"
+        >
+          <div
+            className="absolute -inset-4 rounded-3xl opacity-30 blur-2xl"
+            style={{ background: 'radial-gradient(circle, rgba(212,175,55,0.3), transparent)' }}
+          />
+          <div
+            className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border-2 luxury-shadow"
+            style={{ borderColor: 'rgba(212,175,55,0.4)' }}
           >
-            <div className="relative mb-8">
-              <div
-                className="absolute -inset-3 rounded-full opacity-30 blur-2xl"
-                style={{ background: 'radial-gradient(circle, rgba(34,47,82,0.3), transparent)' }}
-              />
-              <div
-                className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-2"
-                style={{ borderColor: 'rgba(212,175,55,0.4)' }}
-              >
-                <img
-                  src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt="Deepak R"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: 'linear-gradient(180deg, transparent 50%, rgba(34,47,82,0.15) 100%)',
-                  }}
-                />
-              </div>
-              <FloralCorner className="absolute -bottom-2 -right-2 w-16 h-16 text-gold/50" />
-            </div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-gold-deep mb-2">
-              {t('couple_groom')}
-            </p>
-            <h3 className="font-script text-5xl sm:text-6xl gold-gradient-text mb-3"
-              style={{ lineHeight: 1.4, paddingTop: '0.1em', paddingBottom: '0.1em', overflow: 'visible' }}
-            >
-              Deepak
-            </h3>
-            <p className="font-serif-lux text-base sm:text-lg text-muted-foreground italic max-w-xs">
-              {t('couple_deepak_desc')}
-            </p>
-          </motion.div>
+            <img
+              src="/couple.jpg"
+              alt="Deepak and Dhanushri"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: 'linear-gradient(180deg, transparent 60%, rgba(34,47,82,0.2) 100%)',
+              }}
+            />
+          </div>
+          <FloralCorner className="absolute -bottom-3 -right-3 w-20 h-20 text-gold/50" />
+          <FloralCorner className="absolute -top-3 -left-3 w-20 h-20 text-gold/50" flip />
+        </motion.div>
 
-          {/* Bride */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="flex flex-col items-center text-center group"
-          >
-            <div className="relative mb-8">
-              <div
-                className="absolute -inset-3 rounded-full opacity-30 blur-2xl"
-                style={{ background: 'radial-gradient(circle, rgba(212,175,55,0.3), transparent)' }}
-              />
-              <div
-                className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-2"
-                style={{ borderColor: 'rgba(212,175,55,0.4)' }}
-              >
-                <img
-                  src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt="Dhanushri V S"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: 'linear-gradient(180deg, transparent 50%, rgba(212,175,55,0.15) 100%)',
-                  }}
-                />
-              </div>
-              <FloralCorner className="absolute -bottom-2 -left-2 w-16 h-16 text-gold/50" flip />
-            </div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-gold-deep mb-2">
-              {t('couple_bride')}
-            </p>
-            <h3 className="font-script text-5xl sm:text-6xl gold-gradient-text mb-3"
-              style={{ lineHeight: 1.4, paddingTop: '0.1em', paddingBottom: '0.1em', overflow: 'visible' }}
-            >
-              Dhanushri
-            </h3>
-            <p className="font-serif-lux text-base sm:text-lg text-muted-foreground italic max-w-xs">
-              {t('couple_dhanushri_desc')}
-            </p>
-          </motion.div>
-        </div>
-
+        {/* Couple Names & Descriptions */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="mt-16 text-center"
+          transition={{ duration: 1, delay: 0.4 }}
         >
+          <h3
+            className="font-script text-5xl sm:text-6xl gold-gradient-text mb-6"
+            style={{ lineHeight: 1.4, paddingTop: '0.1em', paddingBottom: '0.1em', overflow: 'visible' }}
+          >
+            Deepak &amp; Dhanushri
+          </h3>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto text-center mb-10">
+            <div className="glass p-6 rounded-2xl">
+              <p className="font-body text-xs tracking-[0.3em] uppercase text-gold-deep mb-2">
+                {t('couple_groom')} — Deepak
+              </p>
+              <p className="font-serif-lux text-base sm:text-lg text-muted-foreground italic">
+                {t('couple_deepak_desc')}
+              </p>
+            </div>
+            <div className="glass p-6 rounded-2xl">
+              <p className="font-body text-xs tracking-[0.3em] uppercase text-gold-deep mb-2">
+                {t('couple_bride')} — Dhanushri
+              </p>
+              <p className="font-serif-lux text-base sm:text-lg text-muted-foreground italic">
+                {t('couple_dhanushri_desc')}
+              </p>
+            </div>
+          </div>
+
           <GoldDivider className="mb-8" />
-          <blockquote className="font-script text-3xl sm:text-4xl text-royal mb-2"
+          <blockquote
+            className="font-script text-3xl sm:text-4xl text-royal mb-2"
             style={{ lineHeight: 1.4, paddingTop: '0.1em', paddingBottom: '0.1em' }}
           >
             {t('couple_quote')}
           </blockquote>
-          <div className="flex justify-center gap-8 mt-4">
-            <span className="font-script text-2xl text-gold-deep opacity-70"
-              style={{ lineHeight: 1.4, paddingTop: '0.1em', paddingBottom: '0.1em' }}
-            >
-              Deepak
-            </span>
-            <span className="text-gold text-xl self-center">❤</span>
-            <span className="font-script text-2xl text-gold-deep opacity-70"
-              style={{ lineHeight: 1.4, paddingTop: '0.1em', paddingBottom: '0.1em' }}
-            >
-              Dhanushri
-            </span>
-          </div>
         </motion.div>
       </div>
     </section>
   );
 }
+
