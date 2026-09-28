@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 const sections = [
   { id: 'hero', key: 'nav_home' },
   { id: 'countdown', key: 'nav_countdown' },
-  { id: 'couple', key: 'nav_couple' },
+
   { id: 'reception', key: 'nav_reception' },
   { id: 'venue', key: 'nav_venue' },
   { id: 'rsvp', key: 'nav_rsvp' },

@@ -7,7 +7,6 @@ import OpeningSequence from '@/components/opening-sequence';
 import Navigation from '@/components/navigation';
 import HeroSection from '@/components/hero-section';
 import CountdownSection from '@/components/countdown-section';
-import CoupleSection from '@/components/couple-section';
 import ReceptionSection from '@/components/reception-section';
 import VenueSection from '@/components/venue-section';
 import RsvpSection from '@/components/rsvp-section';
@@ -40,7 +39,6 @@ function WeddingContent() {
           <main>
             <HeroSection />
             <CountdownSection />
-            <CoupleSection />
             <ReceptionSection />
             <VenueSection />
             <RsvpSection />
