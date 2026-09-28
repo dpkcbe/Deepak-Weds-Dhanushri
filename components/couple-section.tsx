@@ -51,9 +51,24 @@ export default function CoupleSection() {
             style={{ background: 'radial-gradient(circle, rgba(212,175,55,0.3), transparent)' }}
           />
           <div
-            className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border-2 luxury-shadow"
+            className="relative w-full max-h-[520px] rounded-3xl overflow-hidden border-2 luxury-shadow flex items-center justify-center bg-royal/5"
             style={{ borderColor: 'rgba(212,175,55,0.4)' }}
           >
+            {/* Ambient blurred photo fill */}
+            <img
+              src="couple.jpg"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                if (!target.dataset.retried) {
+                  target.dataset.retried = 'true';
+                  target.src = '/Deepak-Weds-Dhanushri/couple.jpg';
+                }
+              }}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110"
+              aria-hidden="true"
+            />
+            {/* Full uncropped image */}
             <img
               src="couple.jpg"
               onError={(e) => {
@@ -64,13 +79,13 @@ export default function CoupleSection() {
                 }
               }}
               alt="Deepak and Dhanushri"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="relative z-10 max-h-[520px] w-auto max-w-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
               loading="lazy"
             />
             <div
-              className="absolute inset-0 pointer-events-none"
+              className="absolute inset-0 pointer-events-none z-20"
               style={{
-                background: 'linear-gradient(180deg, transparent 60%, rgba(34,47,82,0.2) 100%)',
+                background: 'linear-gradient(180deg, transparent 70%, rgba(34,47,82,0.15) 100%)',
               }}
             />
           </div>
