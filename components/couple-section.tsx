@@ -55,7 +55,14 @@ export default function CoupleSection() {
             style={{ borderColor: 'rgba(212,175,55,0.4)' }}
           >
             <img
-              src="/couple.jpg"
+              src="couple.jpg"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                if (!target.dataset.retried) {
+                  target.dataset.retried = 'true';
+                  target.src = '/Deepak-Weds-Dhanushri/couple.jpg';
+                }
+              }}
               alt="Deepak and Dhanushri"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
