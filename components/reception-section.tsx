@@ -24,12 +24,9 @@ export default function ReceptionSection() {
           transition={{ duration: 1 }}
           className="text-center mb-12"
         >
-          <p className="font-body text-xs sm:text-sm tracking-[0.4em] uppercase text-gold-deep mb-4">
+          <p className="font-body text-xs sm:text-sm tracking-[0.4em] uppercase text-gold-deep">
             {t('reception_subtitle')}
           </p>
-          <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-royal">
-            {t('reception_title')}
-          </h2>
         </motion.div>
 
         <motion.div
