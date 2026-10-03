@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const isGithubPages = Boolean(process.env.GITHUB_REPOSITORY) && !process.env.VERCEL;
+const isGithubPages = process.env.BUILD_FOR_GITHUB_PAGES === 'true';
 
 const nextConfig = {
   eslint: {

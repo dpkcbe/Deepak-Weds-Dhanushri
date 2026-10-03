@@ -43,7 +43,7 @@ jobs:
         run: npx next build
         env:
           NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY }}
-          IS_GITHUB_PAGES: "true"
+          BUILD_FOR_GITHUB_PAGES: "true"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
