@@ -6,12 +6,9 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: { unoptimized: true },
-  ...(isGithubPages
-    ? {
-      output: 'export',
-      basePath: '/Deepak-Weds-Dhanushri',
-    }
-    : {}),
+  output: isGithubPages ? 'export' : undefined,
+  basePath: isGithubPages ? '/Deepak-Weds-Dhanushri' : '',
+  assetPrefix: isGithubPages ? '/Deepak-Weds-Dhanushri' : '',
 };
 
 module.exports = nextConfig;
