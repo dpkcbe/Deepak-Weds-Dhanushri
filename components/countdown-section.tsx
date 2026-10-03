@@ -80,8 +80,16 @@ export default function CountdownSection() {
   }, []);
 
   const handleAppleCalendar = (e: React.MouseEvent) => {
-    e.preventDefault();
+    // On iOS or macOS, webcal scheme opens Apple Calendar app directly
+    const isApple = /iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent);
+    if (isApple && typeof window !== 'undefined') {
+      const host = window.location.host;
+      const pathname = window.location.pathname.replace(/\/$/, '');
+      window.location.href = `webcal://${host}${pathname}/wedding-reception.ics`;
+      return;
+    }
 
+    e.preventDefault();
     const icsContent = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
