@@ -51,7 +51,7 @@ export default function RsvpSection() {
           Name: data.name,
           Phone: data.phone,
           Guests: data.guests,
-          Attending: data.attending === 'yes' ? 'Yes, with pleasure' : 'Sadly, cannot',
+          Attending: data.attending === 'yes' ? 'Yes, with pleasure' : 'Sending love from afar',
           Message: data.message || 'No message provided',
         }),
       });

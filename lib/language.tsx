@@ -103,7 +103,7 @@ export const translations: Dict = {
   rsvp_guests: { en: 'Number of Guests', ta: 'வரும் நபர்கள்' },
   rsvp_attending: { en: 'Will You Attend?', ta: 'நீங்கள் வருவீர்களா?' },
   rsvp_yes: { en: 'Yes, with pleasure', ta: 'ஆம், மகிழ்ச்சியுடன்' },
-  rsvp_no: { en: 'Sadly, cannot', ta: 'இல்லை, முடியாது' },
+  rsvp_no: { en: 'Sending love from afar', ta: 'தூரத்தில் இருந்து அன்புடன்' },
   rsvp_message: { en: 'Special Message', ta: 'சிறப்பு செய்தி' },
   rsvp_message_placeholder: {
     en: 'Share your blessings or wishes...',
