@@ -65,7 +65,7 @@ export default function Navigation() {
 
       {/* Centering wrapper — fixed full-width, uses flex to centre the pill */}
       <div
-        className="fixed top-4 left-0 right-0 z-50 flex justify-center pointer-events-none"
+        className="fixed top-4 left-0 right-0 z-50 hidden sm:flex justify-center pointer-events-none"
         style={{ paddingLeft: '16px', paddingRight: '16px' }}
       >
         <AnimatePresence>
@@ -88,7 +88,7 @@ export default function Navigation() {
                     key={section.id}
                     onClick={() => scrollTo(section.id)}
                     className={cn(
-                      'relative px-3 py-1.5 text-xs font-body tracking-wide rounded-full transition-all duration-300 hidden sm:block whitespace-nowrap',
+                      'relative px-3 py-1.5 text-xs font-body tracking-wide rounded-full transition-all duration-300 whitespace-nowrap',
                       activeSection === section.id
                         ? 'text-royal'
                         : 'text-muted-foreground hover:text-royal'
@@ -105,16 +105,6 @@ export default function Navigation() {
                     )}
                   </button>
                 ))}
-
-                {/* Mobile-only: compact label */}
-                <button
-                  onClick={() => scrollTo('hero')}
-                  className="sm:hidden px-3 py-1.5 font-script text-lg text-royal"
-                >
-                  D &amp; D
-                </button>
-
-
               </div>
             </motion.nav>
           )}
