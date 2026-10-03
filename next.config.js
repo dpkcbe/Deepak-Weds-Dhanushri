@@ -8,9 +8,9 @@ const nextConfig = {
   images: { unoptimized: true },
   ...(isGithubActions
     ? {
-        output: 'export',
-        basePath: '/Deepak-Weds-Dhanushri',
-      }
+      output: 'export',
+      basePath: '/Deepak-Weds-Dhanushri',
+    }
     : {}),
 };
 
