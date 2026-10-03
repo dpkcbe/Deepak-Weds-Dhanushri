@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Deepak & Dhanushri Wedding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+SUMMARY:Deepak & Dhanushri - Wedding Reception
+DESCRIPTION:Join us for the wedding reception of Deepak & Dhanushri at Aadrika Hall, Coimbatore.
+LOCATION:Aadrika Hall, Annapoorna, VCS Nagar, Thudiyalur, Coimbatore, Tamil Nadu 641029
+DTSTART:20261114T130000Z
+DTEND:20261114T153000Z
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR

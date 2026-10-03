@@ -79,6 +79,38 @@ export default function CountdownSection() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleAppleCalendar = (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    const icsContent = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Deepak & Dhanushri Wedding//EN',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      'SUMMARY:Deepak & Dhanushri - Wedding Reception',
+      'DESCRIPTION:Join us for the wedding reception of Deepak & Dhanushri at Aadrika Hall, Coimbatore.',
+      'LOCATION:Aadrika Hall, Annapoorna, VCS Nagar, Thudiyalur, Coimbatore, Tamil Nadu 641029',
+      'DTSTART:20261114T130000Z',
+      'DTEND:20261114T153000Z',
+      'STATUS:CONFIRMED',
+      'SEQUENCE:0',
+      'END:VEVENT',
+      'END:VCALENDAR',
+    ].join('\r\n');
+
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'wedding-reception.ics');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => window.URL.revokeObjectURL(url), 2000);
+  };
+
   return (
     <section
       id="countdown"
@@ -155,9 +187,9 @@ export default function CountdownSection() {
             {t('add_google_cal')}
           </a>
           <a
-            href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20261114T130000Z%0ADTEND:20261114T153000Z%0ASUMMARY:Deepak %26 Dhanushri - Wedding Reception%0ADESCRIPTION:Reception at Aadrika Hall, Coimbatore%0ALOCATION:Aadrika Hall, Coimbatore%0AEND:VEVENT%0AEND:VCALENDAR"
-            download="wedding-reception.ics"
-            className="px-6 py-3 rounded-full text-sm font-body tracking-wide border border-gold/30 text-royal hover:bg-gold/10 transition-all duration-300 hover:scale-105"
+            href="/wedding-reception.ics"
+            onClick={handleAppleCalendar}
+            className="px-6 py-3 rounded-full text-sm font-body tracking-wide border border-gold/30 text-royal hover:bg-gold/10 transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             {t('add_apple_cal')}
           </a>
