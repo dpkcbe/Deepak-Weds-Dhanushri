@@ -69,8 +69,8 @@ export const translations: Dict = {
   // Reception
   reception_title: { en: 'Wedding Reception', ta: 'திருமண வரவேற்பு' },
   reception_subtitle: {
-    en: 'We cordially invite you to celebrate with us',
-    ta: 'எங்களுடன் கொண்டாட உங்களை அன்புடன் அழைக்கிறோம்',
+    en: 'Join Us in Celebrating Our Special Day',
+    ta: 'எங்கள் சிறப்பு நாளை எங்களுடன் கொண்டாட அன்புடன் அழைக்கிறோம்',
   },
   reception_date: { en: '14 November 2026', ta: '14 நவம்பர் 2026' },
   reception_time: { en: '6:30 PM – 8:30 PM', ta: 'மாலை 6:30 – இரவு 8:30' },

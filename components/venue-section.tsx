@@ -18,6 +18,17 @@ export default function VenueSection() {
       className="relative min-h-screen flex items-center justify-center py-20 paper-texture overflow-hidden"
     >
       <div className="relative z-10 max-w-4xl w-full px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="text-center mb-12"
+        >
+          <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-royal">
+            {t('venue_title')}
+          </h2>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
