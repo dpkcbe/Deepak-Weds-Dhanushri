@@ -3,6 +3,8 @@ delete process.env.NEXT_PUBLIC_BASE_PATH;
 delete process.env.NEXT_PUBLIC_ASSET_PREFIX;
 delete process.env.ASSET_PREFIX;
 delete process.env.BASE_PATH;
+delete process.env.VERCEL_GIT_REPO_SLUG;
+delete process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG;
 
 const nextConfig = {
   eslint: {
