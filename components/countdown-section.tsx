@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Calendar } from 'lucide-react';
 import { useLanguage } from '@/lib/language';
 import { GoldDivider } from './decorative';
 
@@ -190,15 +191,25 @@ export default function CountdownSection() {
             href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Deepak%20%26%20Dhanushri%20-%20Wedding%20Reception&dates=20261114T130000Z/20261114T153000Z&details=Reception%20at%20Aadrika%20Hall%2C%20Coimbatore&location=Aadrika%20Hall%2C%20Annapoorna%2C%20VCS%20Nagar%2C%20Thudiyalur%2C%20Coimbatore%2C%20Tamil%20Nadu%20641029"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-full text-sm font-body tracking-wide border border-gold/30 text-royal hover:bg-gold/10 transition-all duration-300 hover:scale-105"
+            className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-body tracking-wide text-ivory transition-all duration-300 hover:scale-105"
+            style={{
+              background: 'linear-gradient(135deg, hsl(222 56% 22%) 0%, hsl(222 40% 35%) 100%)',
+              boxShadow: '0 8px 30px rgba(34,47,82,0.25)',
+            }}
           >
+            <Calendar className="w-4 h-4 text-gold-deep" />
             {t('add_google_cal')}
           </a>
           <a
             href="/wedding-reception.ics"
             onClick={handleAppleCalendar}
-            className="px-6 py-3 rounded-full text-sm font-body tracking-wide border border-gold/30 text-royal hover:bg-gold/10 transition-all duration-300 hover:scale-105 cursor-pointer"
+            className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-body tracking-wide text-ivory transition-all duration-300 hover:scale-105 cursor-pointer"
+            style={{
+              background: 'linear-gradient(135deg, hsl(222 56% 22%) 0%, hsl(222 40% 35%) 100%)',
+              boxShadow: '0 8px 30px rgba(34,47,82,0.25)',
+            }}
           >
+            <Calendar className="w-4 h-4 text-gold-deep" />
             {t('add_apple_cal')}
           </a>
         </motion.div>
