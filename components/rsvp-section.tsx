@@ -12,7 +12,7 @@ import { GoldDivider, FloralCorner, PetalDecor } from './decorative';
 const schema = z.object({
   name: z.string().min(1, 'required'),
   phone: z.string().min(10, 'invalid_phone'),
-  guests: z.number().min(1).max(20),
+  guests: z.number().min(0, 'invalid_guests').max(20),
   attending: z.enum(['yes', 'no']),
   message: z.string().optional(),
 });
@@ -29,11 +29,16 @@ export default function RsvpSection() {
     register,
     handleSubmit,
     reset,
+    watch,
+    setValue,
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: { guests: 1, attending: 'yes' },
   });
+
+  const attending = watch('attending');
+  const guestsCount = watch('guests');
 
   const onSubmit = async (data: FormData) => {
     setSubmitting(true);
@@ -215,7 +220,7 @@ export default function RsvpSection() {
                     <input
                       {...register('guests', { valueAsNumber: true })}
                       type="number"
-                      min={1}
+                      min={attending === 'no' ? 0 : 1}
                       max={20}
                       className={inputClass}
                     />
@@ -231,7 +236,13 @@ export default function RsvpSection() {
                         <input
                           type="radio"
                           value="yes"
-                          {...register('attending')}
+                          {...register('attending', {
+                            onChange: (e) => {
+                              if (e.target.value === 'yes' && guestsCount === 0) {
+                                setValue('guests', 1);
+                              }
+                            },
+                          })}
                           className="peer sr-only"
                         />
                         <div className="px-4 py-3 rounded-xl border border-gold/20 text-center text-sm font-body text-royal peer-checked:border-gold peer-checked:bg-gold/10 transition-all">
@@ -242,7 +253,13 @@ export default function RsvpSection() {
                         <input
                           type="radio"
                           value="no"
-                          {...register('attending')}
+                          {...register('attending', {
+                            onChange: (e) => {
+                              if (e.target.value === 'no') {
+                                setValue('guests', 0);
+                              }
+                            },
+                          })}
                           className="peer sr-only"
                         />
                         <div className="px-4 py-3 rounded-xl border border-gold/20 text-center text-sm font-body text-royal peer-checked:border-gold peer-checked:bg-gold/10 transition-all">
