@@ -61,7 +61,7 @@ export default function CoupleSection() {
                 const target = e.target as HTMLImageElement;
                 if (!target.dataset.retried) {
                   target.dataset.retried = 'true';
-                  target.src = '/Deepak-Weds-Dhanushri/couple.jpg';
+                  target.src = 'couple.jpg';
                 }
               }}
               alt=""
@@ -75,7 +75,7 @@ export default function CoupleSection() {
                 const target = e.target as HTMLImageElement;
                 if (!target.dataset.retried) {
                   target.dataset.retried = 'true';
-                  target.src = '/Deepak-Weds-Dhanushri/couple.jpg';
+                  target.src = 'couple.jpg';
                 }
               }}
               alt="Deepak and Dhanushri"
