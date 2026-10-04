@@ -128,36 +128,10 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="flex justify-center mb-6"
+          className="flex justify-center mb-8"
         >
           <GoldFlourish className="w-48 h-12" />
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="font-heading text-xl sm:text-2xl text-royal tracking-wide mb-2"
-        >
-          {t('hero_reception_invitation')}
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.4 }}
-          className="font-serif-lux text-lg sm:text-xl text-muted-foreground mb-1"
-        >
-          14 November 2026
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.5 }}
-          className="font-serif-lux text-base sm:text-lg text-muted-foreground mb-10"
-        >
-          Aadrika Hall, Coimbatore
-        </motion.p>
 
         {/* Open Invitation button */}
         <motion.button
