@@ -25,10 +25,10 @@ export const translations: Dict = {
   // Hero
   hero_reception_invitation: { en: 'Reception Invitation', ta: 'வரவேற்பு அழைப்பு' },
   hero_save_the_date: { en: 'Save the Date', ta: 'தேதியை சேமிக்க' },
-  hero_together_with: { en: 'Together with their families', ta: 'தங்கள் குடும்பங்களுடன்' },
+  hero_together_with: { en: 'Together with our families', ta: 'எங்கள் குடும்பங்களுடன்' },
   hero_request_honor: {
-    en: 'request the honor of your presence',
-    ta: 'உங்கள் வருகையை வரவேற்கின்றோம்',
+    en: 'we warmly invite you to celebrate the wedding reception of',
+    ta: 'எங்கள் திருமண வரவேற்பிற்கு உங்களை அன்புடன் அழைக்கின்றோம்',
   },
 
   // Countdown
