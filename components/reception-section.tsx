@@ -78,33 +78,34 @@ export default function ReceptionSection() {
               <GoldDivider className="mb-8" />
 
               <div className="space-y-6">
-                <div className="flex items-center justify-center gap-3">
-                  <Calendar className="w-5 h-5 text-gold-deep" />
-                  <p className="font-heading text-xl sm:text-2xl text-royal">
+                <div className="flex items-center justify-center gap-3 sm:gap-4">
+                  <Calendar className="w-6 h-6 sm:w-7 sm:h-7 text-gold-deep shrink-0" />
+                  <p className="font-heading text-2xl sm:text-3xl font-semibold text-royal tracking-wide">
                     {t('reception_date')}
                   </p>
                 </div>
 
-                <div className="flex items-center justify-center gap-3">
-                  <Clock className="w-5 h-5 text-gold-deep" />
-                  <p className="font-serif-lux text-lg sm:text-xl text-muted-foreground">
+                <div className="flex items-center justify-center gap-3 sm:gap-4">
+                  <Clock className="w-6 h-6 sm:w-7 sm:h-7 text-gold-deep shrink-0" />
+                  <p className="font-heading text-xl sm:text-2xl font-semibold text-royal tracking-wide">
                     {t('reception_time')}
                   </p>
                 </div>
 
-                <div className="flex items-center justify-center gap-3">
-                  <MapPin className="w-5 h-5 text-gold-deep" />
-                  <p className="font-serif-lux text-lg sm:text-xl text-muted-foreground">
-                    {t('reception_venue')}
-                  </p>
+                <div className="flex items-start justify-center gap-3 sm:gap-4">
+                  <MapPin className="w-6 h-6 sm:w-7 sm:h-7 text-gold-deep shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-heading text-xl sm:text-2xl font-medium text-royal">
+                      {t('reception_venue')}
+                    </p>
+                    <p className="font-serif-lux text-base sm:text-lg italic text-muted-foreground mt-1">
+                      Annapoorna, Thudiyalur, Coimbatore
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <GoldDivider className="mt-8 mb-6" />
-
-              <p className="font-serif-lux text-base italic text-muted-foreground">
-                Annapoorna, Thudiyalur, Coimbatore
-              </p>
+              <GoldDivider className="mt-8 mb-4" />
             </div>
           </div>
         </motion.div>
