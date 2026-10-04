@@ -3,17 +3,22 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 
+function pseudoRandom(seed: number) {
+  const x = Math.sin(seed + 1) * 10000;
+  return x - Math.floor(x);
+}
+
 export default function FloatingParticles({ count = 15 }: { count?: number }) {
   const particles = useMemo(
     () =>
       Array.from({ length: count }).map((_, i) => ({
         id: i,
-        size: 3 + Math.random() * 5,
-        left: Math.random() * 100,
-        top: Math.random() * 100,
-        duration: 8 + Math.random() * 12,
-        delay: Math.random() * 5,
-        drift: (Math.random() - 0.5) * 60,
+        size: 3 + pseudoRandom(i * 1.1) * 5,
+        left: pseudoRandom(i * 2.3) * 100,
+        top: pseudoRandom(i * 3.7) * 100,
+        duration: 8 + pseudoRandom(i * 4.9) * 12,
+        delay: pseudoRandom(i * 5.3) * 5,
+        drift: (pseudoRandom(i * 6.7) - 0.5) * 60,
       })),
     [count]
   );
