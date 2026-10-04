@@ -18,7 +18,7 @@ export const translations: Dict = {
   nav_rsvp: { en: 'RSVP', ta: 'பதில்' },
 
   // Opening
-  open_invitation: { en: 'Open Invitation', ta: 'அழைப்பைத் திறக்க' },
+  open_invitation: { en: 'View Details', ta: 'விவரங்களைக் காண்க' },
   enter_celebration: { en: 'Enter the Celebration', ta: 'விழாவிற்குள் நுழைய' },
   tap_to_open: { en: 'Tap to open your invitation', ta: 'உங்கள் அழைப்பைத் திறக்க தட்டவும்' },
 
