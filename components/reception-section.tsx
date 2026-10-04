@@ -6,6 +6,8 @@ import { useLanguage } from '@/lib/language';
 import { GoldDivider, FloralCorner, PetalDecor } from './decorative';
 
 const MAPS_LINK = 'https://maps.app.goo.gl/r86Ybki1eBwZSSpH9';
+const MAPS_EMBED_SRC =
+  'https://www.google.com/maps?q=Aadrika+Hall+Annapoorna+VCS+Nagar+Thudiyalur+Coimbatore&output=embed';
 
 export default function ReceptionSection() {
   const { t } = useLanguage();
@@ -117,7 +119,7 @@ export default function ReceptionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex justify-center mt-8"
+            className="flex justify-center mt-8 mb-8"
           >
             <a
               href={MAPS_LINK}
@@ -132,6 +134,25 @@ export default function ReceptionSection() {
               <Navigation className="w-4 h-4 text-gold-deep" />
               {t('venue_navigate')}
             </a>
+          </motion.div>
+
+          {/* Embedded Google Map */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="relative rounded-2xl overflow-hidden luxury-shadow h-[320px] sm:h-[360px] border border-gold/20"
+          >
+            <iframe
+              title="Venue Location"
+              src={MAPS_EMBED_SRC}
+              className="w-full h-full border-0"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              style={{ filter: 'grayscale(0.2) sepia(0.1) contrast(1.05)' }}
+            />
           </motion.div>
         </motion.div>
       </div>
