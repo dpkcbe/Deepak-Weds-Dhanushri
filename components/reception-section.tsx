@@ -1,9 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Clock, MapPin, Calendar } from 'lucide-react';
+import { Clock, MapPin, Calendar, Navigation } from 'lucide-react';
 import { useLanguage } from '@/lib/language';
 import { GoldDivider, FloralCorner, PetalDecor } from './decorative';
+
+const MAPS_LINK = 'https://maps.app.goo.gl/r86Ybki1eBwZSSpH9';
 
 export default function ReceptionSection() {
   const { t } = useLanguage();
@@ -108,6 +110,29 @@ export default function ReceptionSection() {
               <GoldDivider className="mt-8 mb-4" />
             </div>
           </div>
+
+          {/* Navigate with Google Maps button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="flex justify-center mt-8"
+          >
+            <a
+              href={MAPS_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-body tracking-wide text-ivory transition-all duration-300 hover:scale-105"
+              style={{
+                background: 'linear-gradient(135deg, hsl(222 56% 22%) 0%, hsl(222 40% 35%) 100%)',
+                boxShadow: '0 8px 30px rgba(34,47,82,0.25)',
+              }}
+            >
+              <Navigation className="w-4 h-4 text-gold-deep" />
+              {t('venue_navigate')}
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </section>
