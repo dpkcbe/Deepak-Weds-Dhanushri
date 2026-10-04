@@ -80,46 +80,6 @@ export default function CountdownSection() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleAppleCalendar = (e: React.MouseEvent) => {
-    // On iOS or macOS, webcal scheme opens Apple Calendar app directly
-    const isApple = /iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent);
-    if (isApple && typeof window !== 'undefined') {
-      const host = window.location.host;
-      const pathname = window.location.pathname.replace(/\/$/, '');
-      window.location.href = `webcal://${host}${pathname}/wedding-reception.ics`;
-      return;
-    }
-
-    e.preventDefault();
-    const icsContent = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//Deepak & Dhanushri Wedding//EN',
-      'CALSCALE:GREGORIAN',
-      'METHOD:PUBLISH',
-      'BEGIN:VEVENT',
-      'SUMMARY:Deepak & Dhanushri - Wedding Reception',
-      'DESCRIPTION:Join us for the wedding reception of Deepak & Dhanushri at Aadrika Hall, Coimbatore.',
-      'LOCATION:Aadrika Hall, Annapoorna, VCS Nagar, Thudiyalur, Coimbatore, Tamil Nadu 641029',
-      'DTSTART:20261114T130000Z',
-      'DTEND:20261114T153000Z',
-      'STATUS:CONFIRMED',
-      'SEQUENCE:0',
-      'END:VEVENT',
-      'END:VCALENDAR',
-    ].join('\r\n');
-
-    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', 'wedding-reception.ics');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    setTimeout(() => window.URL.revokeObjectURL(url), 2000);
-  };
-
   return (
     <section
       id="countdown"
@@ -185,7 +145,7 @@ export default function CountdownSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex justify-center items-center"
         >
           <a
             href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Deepak%20%26%20Dhanushri%20-%20Wedding%20Reception&dates=20261114T130000Z/20261114T153000Z&details=Reception%20at%20Aadrika%20Hall%2C%20Coimbatore&location=Aadrika%20Hall%2C%20Annapoorna%2C%20VCS%20Nagar%2C%20Thudiyalur%2C%20Coimbatore%2C%20Tamil%20Nadu%20641029"
@@ -199,18 +159,6 @@ export default function CountdownSection() {
           >
             <Calendar className="w-4 h-4 text-gold-deep" />
             {t('add_google_cal')}
-          </a>
-          <a
-            href="/wedding-reception.ics"
-            onClick={handleAppleCalendar}
-            className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-body tracking-wide text-ivory transition-all duration-300 hover:scale-105 cursor-pointer"
-            style={{
-              background: 'linear-gradient(135deg, hsl(222 56% 22%) 0%, hsl(222 40% 35%) 100%)',
-              boxShadow: '0 8px 30px rgba(34,47,82,0.25)',
-            }}
-          >
-            <Calendar className="w-4 h-4 text-gold-deep" />
-            {t('add_apple_cal')}
           </a>
         </motion.div>
       </div>
