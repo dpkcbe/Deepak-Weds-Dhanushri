@@ -15,7 +15,7 @@ export default function VenueSection() {
   return (
     <section
       id="venue"
-      className="relative min-h-screen flex items-center justify-center py-20 paper-texture overflow-hidden"
+      className="relative flex items-center justify-center py-16 md:py-24 paper-texture overflow-hidden"
     >
       <div className="relative z-10 max-w-4xl w-full px-6">
         <motion.div

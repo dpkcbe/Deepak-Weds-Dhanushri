@@ -83,7 +83,7 @@ export default function CountdownSection() {
   return (
     <section
       id="countdown"
-      className="relative min-h-screen flex items-center justify-center py-20 paper-texture overflow-hidden"
+      className="relative flex items-center justify-center py-16 md:py-24 paper-texture overflow-hidden"
     >
       {/* Background gradient */}
       <div

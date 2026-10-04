@@ -10,7 +10,7 @@ export default function CoupleSection() {
   return (
     <section
       id="couple"
-      className="relative min-h-screen flex items-center justify-center py-20 paper-texture overflow-hidden"
+      className="relative flex items-center justify-center py-16 md:py-24 paper-texture overflow-hidden"
     >
       <div
         className="absolute inset-0 pointer-events-none"

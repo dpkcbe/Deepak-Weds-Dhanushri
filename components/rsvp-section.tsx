@@ -83,7 +83,7 @@ export default function RsvpSection() {
   return (
     <section
       id="rsvp"
-      className="relative min-h-screen flex items-center justify-center py-20 paper-texture overflow-hidden"
+      className="relative flex items-center justify-center py-16 md:py-24 paper-texture overflow-hidden"
     >
       <PetalDecor className="absolute top-10 left-10 w-16 h-16 text-gold/15 animate-float-soft" />
       <PetalDecor className="absolute bottom-10 right-10 w-20 h-20 text-royal/15 animate-float-soft" />
